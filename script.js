@@ -1,6 +1,7 @@
 const dogImage = document.querySelector('.dog__image');
 const reloadBtn = document.querySelector('.dog__reload-btn');
 const dropdown = document.querySelector('.dog__form__dropdown');
+const dogBreedBtn = document.querySelector('.dog__breed-btn');
 
 const state = {
   breeds: '',
@@ -12,57 +13,52 @@ const getDogBreedList = async function() {
     const res = await request;
     const data = await res.json();
 
-    console.log(data)
     state.breeds = Object.keys(data.message)
-    console.log(state.breeds)
 
-    // ** I need a function that will dynamically add the breeds to drop down
-    // *** First i will just try to add anything into the drop down
     renderBreedOptions(state.breeds)
     
   } catch (error) {
     console.error(error)
+    alert('Sorry, please try again.')
   }
 }
 
 const getDogBreedPhoto = async function(breed) {
   try {
-
     const request = fetch(`https://dog.ceo/api/breed/${breed}/images`);
     const res = await request;
     const data = await res.json();
 
-    console.log(data)
-    console.log(data.message)
-    console.log(data.message.length)
-
-    // Get random image based on the number of photos per breed
+    // Get random image based on the number of photos per breed.  Data.message.length
     dogImage.src = data.message[Math.floor(Math.random() * data.message.length)]
 
   } catch (error) {
     console.error(error)
+    alert('Sorry, please try again.')
   }
 };
 
-
-
-
-
+// Loop over each breed and insert to dropdown menu
 const renderBreedOptions = function(data) {
-
   data.forEach(dog => {
-    dropdown.insertAdjacentHTML('beforeend', `<option value ="">${dog}</option>`)
+    dropdown.insertAdjacentHTML('beforeend', `<option value ="${dog}">${dog}</option>`)
   })
+};
+
+// Helper function
+const helpGetDogBreedPhoto = function(e) {
+  e.preventDefault()
+  const breed = dropdown.value;
+  if (!breed) return;
   
+  getDogBreedPhoto(breed)
 }
 
-// Reload to pick a random photo of the current breed.
-reloadBtn.addEventListener('click', () => location.reload())
+dogBreedBtn.addEventListener('click', helpGetDogBreedPhoto) // Get dog breed photo
+reloadBtn.addEventListener('click', helpGetDogBreedPhoto) // Added for styling only
 
 const init = function() {
   getDogBreedList();
 };
 
 init();
-
-// getDogBreedPhoto('corgi');
