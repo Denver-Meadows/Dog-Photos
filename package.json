@@ -1,0 +1,22 @@
+{
+  "name": "dog-api",
+  "version": "1.0.0",
+  "description": "Dog Photos",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denver-Meadows/Dog-Photos.git"
+  },
+  "author": "Denver Meadows",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Denver-Meadows/Dog-Photos/issues"
+  },
+  "homepage": "https://github.com/Denver-Meadows/Dog-Photos#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.3.1"
+  }
+}
