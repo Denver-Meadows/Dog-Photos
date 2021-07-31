@@ -7,6 +7,8 @@
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: aliceblue;
+  background-image: url(imgs/nick-fewings-_uYKQgWkMS0-unsplash.jpg);
+  background-size: cover;
 }
 
 .dog__main-container {
@@ -14,20 +16,24 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
 }
 
 .dog__photo {
-  border: solid 2px black;
+  /* border: solid 2px black; */
   height: 30rem;
   width: 30rem;
   background-size: cover;
+  display: flex;
+  margin-bottom: 6rem;
 }
 
 .dog__image {
   object-fit: cover;
   background-position: center;
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   max-width: 100%;
   max-height: 100%;
+  box-shadow: 1rem 1rem 1rem black;
 }
