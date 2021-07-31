@@ -5,16 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dog Photos!</title>
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   
-  <container class="dog__main-container">
-    <div class="dog__photo">
-      <img src="" alt="Photo of Dog" class="dog__image">
-    </div>
+  <container class="form__dog__container">
+    
+    <form class="dog__form">
+      <label for="dropdown">Dog Type</label>
+      <select name = "dropdown" placeholder="Hello">
+        <option value = "" selected></option>
+        <option value = "taj" selected>Taj Mahal</option>
+        <option value = "china">Great Wall of China</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  
+    <container class="dog__main-container">
+      
+      <button type="submit" class="dog__reload-btn">Show me more! <i class="fas fa-paw"></i></button>
+      <div class="dog__photo">
+        <img src="" alt="Photo of Dog" class="dog__image">
+      </div>
+      
+    </container>
+  
   </container>
 
+  
   <script src="script.js"></script>
 </body>
 </html>

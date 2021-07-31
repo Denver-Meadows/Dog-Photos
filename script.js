@@ -1,4 +1,5 @@
 const dogImage = document.querySelector('.dog__image');
+const reloadBtn = document.querySelector('.dog__reload-btn');
 
 const getDogBreedList = async function() {
   try {
@@ -32,6 +33,8 @@ const getDogBreedPhoto = async function(breed) {
     console.error(error)
   }
 }
+
+reloadBtn.addEventListener('click', () => location.reload())
 
 getDogBreedList();
 getDogBreedPhoto('corgi');

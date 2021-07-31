@@ -13,10 +13,16 @@ body {
 
 .dog__main-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
+}
+
+.form__dog__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .dog__photo {
@@ -26,6 +32,7 @@ body {
   background-size: cover;
   display: flex;
   margin-bottom: 6rem;
+  margin-right: 2rem;
 }
 
 .dog__image {
@@ -36,4 +43,22 @@ body {
   max-width: 100%;
   max-height: 100%;
   box-shadow: 1rem 1rem 1rem black;
+}
+
+.dog__reload-btn {
+  margin-bottom: 1rem;
+  border: none;
+  padding: .8rem;
+  border-radius: 20px;
+  background-color: rgb(128, 196, 230);
+  box-shadow: 1rem 1rem 3rem black;
+  cursor: pointer;
+}
+
+.dog__reload-btn:hover {
+  transform: translateY(-2px);
+}
+
+.dog__reload-btn:active {
+  transform: translateY(.5px);
 }

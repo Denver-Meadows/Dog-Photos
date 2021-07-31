@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Denver-Meadows/Dog-Photos#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "parcel": "^2.0.0-beta.3.1"
   }
 }
